@@ -5,10 +5,12 @@ import { registration } from './registration.reducer';
 import { users } from './users.reducer';
 import { alert } from './alert.reducer';
 
+
+//CombineReducers helps you keep the same logical division between reducers.
 const rootReducer = combineReducers({
   authentication,
   registration,
-  users,
+  users,              
   alert
 });
 

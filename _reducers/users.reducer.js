@@ -1,5 +1,7 @@
 import { userConstants } from '../_constants';
 
+
+//REDUCER CREATED TO FETCH ALL THE DATA FROM REGISTERED REDUCER
 export function users(state = {}, action) {
   switch (action.type) {
     case userConstants.GETALL_REQUEST:

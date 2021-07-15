@@ -5,6 +5,7 @@ import rootReducer from '../_reducers';
 
 const loggerMiddleware = createLogger();
 
+//CREATING A MIDDLEWARE WHICH OPENS A LOCAL STORAGE TO STORE THE USER INFO FROM REGISTRATION
 export const store = createStore(
     rootReducer,
     applyMiddleware(

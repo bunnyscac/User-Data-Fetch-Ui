@@ -11,6 +11,8 @@ export const userActions = {
     delete: _delete
 };
 
+
+// Login functionality with proper validation through USERNAME and PASSWORD
 function login(username, password) {
     return dispatch => {
         dispatch(request({ username }));
@@ -28,16 +30,20 @@ function login(username, password) {
             );
     };
 
+//Login STATUS if the verification is passed
     function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
     function success(user) { return { type: userConstants.LOGIN_SUCCESS, user } }
     function failure(error) { return { type: userConstants.LOGIN_FAILURE, error } }
 }
 
+//LOGOUT from the saved session page
 function logout() {
     userService.logout();
     return { type: userConstants.LOGOUT };
 }
 
+
+//REGISTER USER 
 function register(user) {
     return dispatch => {
         dispatch(request(user));
@@ -56,11 +62,14 @@ function register(user) {
             );
     };
 
+
+    //REGISTRATION STATUS OF THE USER
     function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
     function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
     function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
 }
 
+//FUNCTION TO FETCH ALL THE REGISTERED USER DATA
 function getAll() {
     return dispatch => {
         dispatch(request());
@@ -72,12 +81,13 @@ function getAll() {
             );
     };
 
+    //FETCH STATUS OF THE REGISTERED USERS
     function request() { return { type: userConstants.GETALL_REQUEST } }
     function success(users) { return { type: userConstants.GETALL_SUCCESS, users } }
     function failure(error) { return { type: userConstants.GETALL_FAILURE, error } }
 }
 
-// prefixed function name with underscore because delete is a reserved word in javascript
+// DELETE REGISTERED USER, ALSO USED UNDERSCORE BEFORE DELETE BECAUSE DELETE IS A RESERVED KEYWORD IN JS
 function _delete(id) {
     return dispatch => {
         dispatch(request(id));

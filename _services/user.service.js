@@ -1,6 +1,7 @@
 import config from 'config';
 import { authHeader } from '../_helpers';
 
+//FEATURES PROVIDED BY THE USER TO MOVE FORWARD
 export const userService = {
     login,
     logout,

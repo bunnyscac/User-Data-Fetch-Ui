@@ -1,5 +1,6 @@
 import { userConstants } from '../_constants';
 
+//USER OPENS THE APP AFTER THE LOGIN AGAIN, THIS SERVES AS THE SAVED SESSION PAGE.
 let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { loggedIn: true, user } : {};
 
